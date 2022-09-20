@@ -1,9 +1,10 @@
-import { InputType, Field } from '@nestjs/graphql';
+import { InputType, Field, PartialType } from '@nestjs/graphql';
+import { CreatePersonDto } from './create-person.dto';
 
 @InputType()
-export class UpdatePersonDto  {
+export class UpdatePersonDto  extends PartialType (CreatePersonDto) {
   @Field({ nullable: true })
-  id: number;
+  _id: string;
   @Field()
   name: string;
   @Field({ nullable: true })

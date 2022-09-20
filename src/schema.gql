@@ -2,33 +2,32 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
-type Employee {
-  id: Int
+type Person {
+  _id: String!
   name: String!
-  country: String
-  Description: String
+  country: String!
+  Description: String!
 }
 
 type Query {
-  getAllPerson: [Employee!]!
-  getPersonById(_id: String!): Employee!
+  getAllPerson: [Person!]!
+  getPersonById(_id: String!): Person!
 }
 
 type Mutation {
-  updatePerson(_id: String!, updatePersonDto: UpdatePersonDto!): Employee!
-  deletePerson(_id: String!): Employee!
-  addPerson(createPersonDto: CreatePersonDto!): Employee!
+  updatePerson(_id: String!, updatePersonDto: UpdatePersonDto!): Person!
+  deletePerson(_id: String!): Person!
+  addPerson(createPersonDto: CreatePersonDto!): Person!
 }
 
 input UpdatePersonDto {
-  id: Float
   name: String!
   country: String
   Description: String
+  _id: String
 }
 
 input CreatePersonDto {
-  id: Float
   name: String!
   country: String
   Description: String

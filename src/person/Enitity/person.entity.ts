@@ -1,22 +1,20 @@
-// import { Field, ObjectType } from '@nestjs/graphql';
+import { Field, ObjectType } from '@nestjs/graphql';
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
 
 export type PersonDocument = Person & Document;
-// @ObjectType()
+@ObjectType()
 @Schema()
 export class Person {
-  // @Field()
-
-  @Prop()
-  id: number;
-  // @Field()
+  @Field()
+  _id: string;
+  @Field()
   @Prop()
   name: string;
-  // @Field()
+  @Field()
   @Prop()
   country: String;
-  // @Field()
+  @Field()
   @Prop()
   Description: string;
 }
